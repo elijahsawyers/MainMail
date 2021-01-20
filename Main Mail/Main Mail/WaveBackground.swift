@@ -1,28 +1,11 @@
 //
-//  ContentView.swift
-//  Shared
+//  WaveBackground.swift
+//  Main Mail
 //
-//  Created by Elijah Sawyers on 1/19/21.
+//  Created by Elijah Sawyers on 1/20/21.
 //
 
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        ZStack {
-            WaveBackground()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            VStack {
-                HStack {
-                    Logo()
-                        .padding()
-                    Spacer()
-                }
-                Spacer()
-            }
-        }
-    }
-}
 
 struct WaveBackground: View {
     var body: some View {
@@ -66,25 +49,5 @@ struct Wave: Shape {
         p.addLine(to: CGPoint(x: rect.minX, y: rect.minY)) // Top left-hand corner.
         p.closeSubpath()
         return p
-    }
-}
-
-struct Logo: View {
-    var body: some View {
-        HStack {
-            Text("\(Image(systemName: "envelope.fill"))")
-                .font(.system(size: 32))
-                .bold()
-            Text("Main Mail")
-                .font(.system(size: 32))
-                .bold()
-        }
-        .shadow(color: Color.black.opacity(0.25), radius: 1.5, x: 0.0, y: 5)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        WaveBackground()
     }
 }
