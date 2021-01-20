@@ -1,1 +1,1 @@
-# MenuBarMail
+# Main Mail
