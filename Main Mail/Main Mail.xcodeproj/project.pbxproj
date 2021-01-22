@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E701724A25BA3A02007036B6 /* EmailOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701724925BA3A02007036B6 /* EmailOptions.swift */; };
+		E701724A25BA3A02007036B6 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701724925BA3A02007036B6 /* SignIn.swift */; };
 		E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265725B7ACEB00F6753E /* MainMailApp.swift */; };
 		E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265825B7ACEB00F6753E /* MainMail.swift */; };
 		E735266F25B7ACEC00F6753E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735265925B7ACEC00F6753E /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E701724925BA3A02007036B6 /* EmailOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOptions.swift; sourceTree = "<group>"; };
+		E701724925BA3A02007036B6 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		E735265725B7ACEB00F6753E /* MainMailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMailApp.swift; sourceTree = "<group>"; };
 		E735265825B7ACEB00F6753E /* MainMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMail.swift; sourceTree = "<group>"; };
 		E735265925B7ACEC00F6753E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 				E735265725B7ACEB00F6753E /* MainMailApp.swift */,
 				E735265825B7ACEB00F6753E /* MainMail.swift */,
 				E7AF3ABA25B8C73900F4348D /* Menu.swift */,
-				E701724925BA3A02007036B6 /* EmailOptions.swift */,
+				E701724925BA3A02007036B6 /* SignIn.swift */,
 				E770F20625B8B999003D4630 /* WaveBackground.swift */,
 				E735265925B7ACEC00F6753E /* Assets.xcassets */,
 				E735266825B7ACEC00F6753E /* Info.plist */,
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */,
-				E701724A25BA3A02007036B6 /* EmailOptions.swift in Sources */,
+				E701724A25BA3A02007036B6 /* SignIn.swift in Sources */,
 				E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */,
 				E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */,
 				E7AF3AB125B8BAAE00F4348D /* WaveBackground.swift in Sources */,
@@ -205,7 +205,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -269,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Main Mail/macOS.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YP79VTY7S5;
@@ -293,6 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Main Mail/macOS.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YP79VTY7S5;

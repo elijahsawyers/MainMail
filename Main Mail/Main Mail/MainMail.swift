@@ -19,7 +19,7 @@ struct MainMail: View {
                 }
                 Spacer()
             }
-            EmailOptions()
+            SignIn()
         }
         .frame(width: width, height: height)
     }
