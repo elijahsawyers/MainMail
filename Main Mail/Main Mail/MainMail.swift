@@ -19,6 +19,7 @@ struct MainMail: View {
                 }
                 Spacer()
             }
+            EmailOptions()
         }
         .frame(width: width, height: height)
     }
