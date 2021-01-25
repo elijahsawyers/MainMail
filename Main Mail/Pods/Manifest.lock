@@ -4,17 +4,21 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - KeychainSwift (19.0.0)
 
 DEPENDENCIES:
   - AppAuth
+  - KeychainSwift (~> 19.0)
 
 SPEC REPOS:
   trunk:
     - AppAuth
+    - KeychainSwift
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
 
-PODFILE CHECKSUM: fbdc65e4c85d94bc69c038bb5906e9ece48e89e9
+PODFILE CHECKSUM: d357309ba47b2d8d7ef77d9432006f2fd016d031
 
 COCOAPODS: 1.10.1

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainMail: View {
+    @Binding var isSignedIn: Bool?
+
     var body: some View {
         ZStack {
             WaveBackground()
@@ -19,7 +21,12 @@ struct MainMail: View {
                 }
                 Spacer()
             }
-            SignIn()
+            if let isSignedIn = isSignedIn, !isSignedIn {
+                SignIn()
+            } else if let isSignedIn = isSignedIn, isSignedIn {
+                // TODO: give filter options to filter mail.
+                Text("Hooray! Signed in!")
+            }
         }
         .frame(width: width, height: height)
     }

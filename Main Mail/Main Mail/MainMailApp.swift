@@ -11,10 +11,14 @@ import AppAuth
 @main
 struct MainMailApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State var isSignedIn: Bool?
 
     var body: some Scene {
         WindowGroup {
-            MainMail()
+            MainMail(isSignedIn: $isSignedIn).onAppear() {
+                // Try to restore the previous authentication state.
+                isSignedIn = GoogleOAuth.restoreAuthState()
+            }
         }
     }
 }
@@ -25,15 +29,18 @@ class AppDelegate: NSResponder, NSApplicationDelegate {
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Set the app delegate.
         NSApplication.shared.delegate = self
+        
+        // Configure the menu bar.
         self.menuBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         configureMenuBarItem()
     }
     
     func application(_ application: NSApplication, open urls: [URL]) {
         if let authorizationFlow = self.currentAuthorizationFlow,
-           let url = urls.first,
-           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+            let url = urls.first,
+            authorizationFlow.resumeExternalUserAgentFlow(with: url) {
             self.currentAuthorizationFlow = nil
         }
     }
