@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BC58D805F4155BF000077C3 /* Pods_Main_Mail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9732031B33EC9972A72425D0 /* Pods_Main_Mail.framework */; };
 		E701724A25BA3A02007036B6 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701724925BA3A02007036B6 /* SignIn.swift */; };
+		E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728278225BE3DCD00C5295C /* GoogleOAuth.swift */; };
+		E728278925BE4EAF00C5295C /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728278825BE4EAF00C5295C /* SignInButton.swift */; };
 		E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265725B7ACEB00F6753E /* MainMailApp.swift */; };
 		E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265825B7ACEB00F6753E /* MainMail.swift */; };
 		E735266F25B7ACEC00F6753E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735265925B7ACEC00F6753E /* Assets.xcassets */; };
@@ -17,7 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		286DE0882775B6F9DFF4CE35 /* Pods-Main Mail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Main Mail.debug.xcconfig"; path = "Target Support Files/Pods-Main Mail/Pods-Main Mail.debug.xcconfig"; sourceTree = "<group>"; };
+		57DC0A634C073560F7FFE963 /* Pods-Main Mail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Main Mail.release.xcconfig"; path = "Target Support Files/Pods-Main Mail/Pods-Main Mail.release.xcconfig"; sourceTree = "<group>"; };
+		9732031B33EC9972A72425D0 /* Pods_Main_Mail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Main_Mail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E701724925BA3A02007036B6 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		E728278225BE3DCD00C5295C /* GoogleOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleOAuth.swift; sourceTree = "<group>"; };
+		E728278825BE4EAF00C5295C /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		E735265725B7ACEB00F6753E /* MainMailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMailApp.swift; sourceTree = "<group>"; };
 		E735265825B7ACEB00F6753E /* MainMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMail.swift; sourceTree = "<group>"; };
 		E735265925B7ACEC00F6753E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,28 +42,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC58D805F4155BF000077C3 /* Pods_Main_Mail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50D17483D8C350AF330E6AA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				286DE0882775B6F9DFF4CE35 /* Pods-Main Mail.debug.xcconfig */,
+				57DC0A634C073560F7FFE963 /* Pods-Main Mail.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E735265125B7ACEA00F6753E = {
 			isa = PBXGroup;
 			children = (
 				E735265625B7ACEB00F6753E /* Main Mail */,
 				E735265F25B7ACEC00F6753E /* Products */,
+				50D17483D8C350AF330E6AA3 /* Pods */,
+				EE61C84949DBBEE5051509B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E735265625B7ACEB00F6753E /* Main Mail */ = {
 			isa = PBXGroup;
 			children = (
+				E728278225BE3DCD00C5295C /* GoogleOAuth.swift */,
 				E770F20725B8B9BD003D4630 /* Logo.swift */,
 				E735265725B7ACEB00F6753E /* MainMailApp.swift */,
 				E735265825B7ACEB00F6753E /* MainMail.swift */,
 				E7AF3ABA25B8C73900F4348D /* Menu.swift */,
 				E701724925BA3A02007036B6 /* SignIn.swift */,
+				E728278825BE4EAF00C5295C /* SignInButton.swift */,
 				E770F20625B8B999003D4630 /* WaveBackground.swift */,
 				E735265925B7ACEC00F6753E /* Assets.xcassets */,
 				E735266825B7ACEC00F6753E /* Info.plist */,
@@ -72,22 +94,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EE61C84949DBBEE5051509B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9732031B33EC9972A72425D0 /* Pods_Main_Mail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E735266525B7ACEC00F6753E /* Main Mail (macOS) */ = {
+		E735266525B7ACEC00F6753E /* Main Mail */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E735267525B7ACEC00F6753E /* Build configuration list for PBXNativeTarget "Main Mail (macOS)" */;
+			buildConfigurationList = E735267525B7ACEC00F6753E /* Build configuration list for PBXNativeTarget "Main Mail" */;
 			buildPhases = (
+				6524E43F6B984A2901CF422A /* [CP] Check Pods Manifest.lock */,
 				E735266225B7ACEC00F6753E /* Sources */,
 				E735266325B7ACEC00F6753E /* Frameworks */,
 				E735266425B7ACEC00F6753E /* Resources */,
+				C19B804CDD9E4F30A4807991 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Main Mail (macOS)";
+			name = "Main Mail";
 			productName = "Main Mail (macOS)";
 			productReference = E735266625B7ACEC00F6753E /* Main Mail.app */;
 			productType = "com.apple.product-type.application";
@@ -119,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E735266525B7ACEC00F6753E /* Main Mail (macOS) */,
+				E735266525B7ACEC00F6753E /* Main Mail */,
 			);
 		};
 /* End PBXProject section */
@@ -135,17 +167,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6524E43F6B984A2901CF422A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Main Mail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C19B804CDD9E4F30A4807991 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Main Mail/Pods-Main Mail-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Main Mail/Pods-Main Mail-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Main Mail/Pods-Main Mail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E735266225B7ACEC00F6753E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */,
 				E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */,
-				E701724A25BA3A02007036B6 /* SignIn.swift in Sources */,
 				E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */,
 				E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */,
-				E7AF3AB125B8BAAE00F4348D /* WaveBackground.swift in Sources */,
 				E7AF3ABB25B8C73900F4348D /* Menu.swift in Sources */,
+				E728278925BE4EAF00C5295C /* SignInButton.swift in Sources */,
+				E701724A25BA3A02007036B6 /* SignIn.swift in Sources */,
+				E7AF3AB125B8BAAE00F4348D /* WaveBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +281,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -265,11 +341,12 @@
 		};
 		E735267625B7ACEC00F6753E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 286DE0882775B6F9DFF4CE35 /* Pods-Main Mail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Main Mail/macOS.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YP79VTY7S5;
@@ -290,11 +367,12 @@
 		};
 		E735267725B7ACEC00F6753E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DC0A634C073560F7FFE963 /* Pods-Main Mail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Main Mail/macOS.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YP79VTY7S5;
@@ -325,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E735267525B7ACEC00F6753E /* Build configuration list for PBXNativeTarget "Main Mail (macOS)" */ = {
+		E735267525B7ACEC00F6753E /* Build configuration list for PBXNativeTarget "Main Mail" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E735267625B7ACEC00F6753E /* Debug */,

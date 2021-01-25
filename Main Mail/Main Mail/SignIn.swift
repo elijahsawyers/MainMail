@@ -18,35 +18,13 @@ struct SignIn: View {
                     x: shadowX,
                     y: shadowY
                 )
-            Button(action: {
-//                let authorizationEndpoint = URL(string: "https://accounts.google.com/o/oauth2/v2/auth")!
-//                let tokenEndpoint = URL(string: "https://www.googleapis.com/oauth2/v4/token")!
-//                let configuration = OIDServiceConfiguration(authorizationEndpoint: authorizationEndpoint, tokenEndpoint: tokenEndpoint)
-            }, label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.white)
-                        .shadow(
-                            color: Color(shadowColor),
-                            radius: shadowRadius,
-                            x: shadowX,
-                            y: shadowY
-                        )
-                    HStack {
-                        Image("Google")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .padding(.leading, 10)
-                        Spacer()
-                        Text("Sign in with Google")
-                            .foregroundColor(.gray)
-                            .font(Font.system(size: 12).bold())
-                        Spacer()
-                    }
-                }
-            })
-                .buttonStyle(PlainButtonStyle())
-                .frame(width: 200, height: 40)
+            SignInButton(image: "Google", text: "Sign in with Google") {
+                GoogleOAuth.signIn({
+                    // TODO: Change app state for successful sign in.
+                }, { error in
+                    // TODO: Alert the user that the login failed.
+                })
+            }
         }
     }
     

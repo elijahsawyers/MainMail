@@ -1,0 +1,6 @@
+platform :macos, '10.9'
+
+target 'Main Mail' do
+  use_frameworks!
+  pod 'AppAuth'
+end

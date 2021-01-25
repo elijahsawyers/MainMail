@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppAuth
 
 @main
 struct MainMailApp: App {
@@ -19,12 +20,22 @@ struct MainMailApp: App {
 }
 
 /// Using the `AppDelegate` as there doesn't appear to be a way to add a menu bar item without it yet.
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSResponder, NSApplicationDelegate {
     var menuBarItem: NSStatusItem!
+    var currentAuthorizationFlow: OIDExternalUserAgentSession?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        NSApplication.shared.delegate = self
         self.menuBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         configureMenuBarItem()
+    }
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        if let authorizationFlow = self.currentAuthorizationFlow,
+           let url = urls.first,
+           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+            self.currentAuthorizationFlow = nil
+        }
     }
 }
 
