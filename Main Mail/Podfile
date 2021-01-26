@@ -4,4 +4,5 @@ target 'Main Mail' do
   use_frameworks!
   pod 'AppAuth'
   pod 'KeychainSwift', '~> 19.0'
+  pod 'Alamofire', '~> 5.2'
 end

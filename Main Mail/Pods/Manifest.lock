@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.1)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -7,18 +8,21 @@ PODS:
   - KeychainSwift (19.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - AppAuth
   - KeychainSwift (~> 19.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - AppAuth
     - KeychainSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
 
-PODFILE CHECKSUM: d357309ba47b2d8d7ef77d9432006f2fd016d031
+PODFILE CHECKSUM: 233b7856d3eda0d9ab0c091b5442b00648b53f7c
 
 COCOAPODS: 1.10.1

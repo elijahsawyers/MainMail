@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class GmailAPI {
     /// The email to use throughout all Gmail API calls.
