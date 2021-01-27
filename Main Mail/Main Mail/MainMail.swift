@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainMail: View {
-    @Binding var isSignedIn: Bool?
+    @ObservedObject var mainMailManager: MainMailManager
 
     var body: some View {
         ZStack {
@@ -21,10 +21,9 @@ struct MainMail: View {
                 }
                 Spacer()
             }
-            if let isSignedIn = isSignedIn, !isSignedIn {
+            if let isSignedIn = mainMailManager.isSignedIn, !isSignedIn {
                 SignIn()
-            } else if let isSignedIn = isSignedIn, isSignedIn {
-                // TODO: give filter options to filter mail.
+            } else if let isSignedIn = mainMailManager.isSignedIn, isSignedIn {
                 Text("Hooray! Signed in!")
             }
         }

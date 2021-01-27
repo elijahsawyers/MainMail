@@ -11,13 +11,13 @@ import AppAuth
 @main
 struct MainMailApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @State var isSignedIn: Bool?
+    @StateObject var mainMailManager = MainMailManager()
 
     var body: some Scene {
         WindowGroup {
-            MainMail(isSignedIn: $isSignedIn).onAppear() {
+            MainMail(mainMailManager: mainMailManager).onAppear {
                 // Try to restore the previous authentication state.
-                isSignedIn = GoogleOAuth.restoreAuthState()
+                mainMailManager.isSignedIn = GoogleOAuth.restoreAuthState()
             }
         }
     }
