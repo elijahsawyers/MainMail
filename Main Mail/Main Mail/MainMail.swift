@@ -24,7 +24,7 @@ struct MainMail: View {
             if let isSignedIn = mainMailManager.isSignedIn, !isSignedIn {
                 SignIn()
             } else if let isSignedIn = mainMailManager.isSignedIn, isSignedIn {
-                Text("Hooray! Signed in!")
+                EmailFilter()
             }
         }
         .frame(width: width, height: height)

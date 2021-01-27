@@ -13,6 +13,7 @@
 		E728278925BE4EAF00C5295C /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728278825BE4EAF00C5295C /* SignInButton.swift */; };
 		E728279525BF598800C5295C /* GmailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728279425BF598800C5295C /* GmailAPI.swift */; };
 		E72827BC25C0E56200C5295C /* MainMailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72827BB25C0E56200C5295C /* MainMailManager.swift */; };
+		E72827C425C0F40900C5295C /* EmailFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72827C325C0F40900C5295C /* EmailFilter.swift */; };
 		E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265725B7ACEB00F6753E /* MainMailApp.swift */; };
 		E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265825B7ACEB00F6753E /* MainMail.swift */; };
 		E735266F25B7ACEC00F6753E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735265925B7ACEC00F6753E /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		E728278825BE4EAF00C5295C /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		E728279425BF598800C5295C /* GmailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailAPI.swift; sourceTree = "<group>"; };
 		E72827BB25C0E56200C5295C /* MainMailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMailManager.swift; sourceTree = "<group>"; };
+		E72827C325C0F40900C5295C /* EmailFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFilter.swift; sourceTree = "<group>"; };
 		E735265725B7ACEB00F6753E /* MainMailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMailApp.swift; sourceTree = "<group>"; };
 		E735265825B7ACEB00F6753E /* MainMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMail.swift; sourceTree = "<group>"; };
 		E735265925B7ACEC00F6753E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		E735265625B7ACEB00F6753E /* Main Mail */ = {
 			isa = PBXGroup;
 			children = (
+				E72827C325C0F40900C5295C /* EmailFilter.swift */,
 				E728279425BF598800C5295C /* GmailAPI.swift */,
 				E728278225BE3DCD00C5295C /* GoogleOAuth.swift */,
 				E770F20725B8B9BD003D4630 /* Logo.swift */,
@@ -229,6 +232,7 @@
 				E728279525BF598800C5295C /* GmailAPI.swift in Sources */,
 				E728278925BE4EAF00C5295C /* SignInButton.swift in Sources */,
 				E701724A25BA3A02007036B6 /* SignIn.swift in Sources */,
+				E72827C425C0F40900C5295C /* EmailFilter.swift in Sources */,
 				E7AF3AB125B8BAAE00F4348D /* WaveBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

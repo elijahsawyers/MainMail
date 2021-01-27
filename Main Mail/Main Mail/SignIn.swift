@@ -11,7 +11,7 @@ struct SignIn: View {
     var body: some View {
         VStack() {
             Text("Sign into your email below.")
-                .font(Font.system(size: 16).bold())
+                .font(font)
                 .shadow(
                     color: Color(shadowColor),
                     radius: shadowRadius,
@@ -30,6 +30,7 @@ struct SignIn: View {
     
     // MARK: - Drawing Constant[s]
     
+    private var font: Font = Font.system(size: 16).bold()
     private var shadowColor: NSColor = NSColor.black.withAlphaComponent(0.25)
     private var shadowRadius: CGFloat = 1.5
     private var shadowX: CGFloat = 0.0

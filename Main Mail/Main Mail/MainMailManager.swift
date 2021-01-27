@@ -29,9 +29,9 @@ class MainMailManager: ObservableObject {
     @Published var isSignedIn: Bool = false {
         didSet {
             if isSignedIn {
-                gmailApi = GmailAPI(successHandler: { [weak self] _ in
-                    self?.fetchInbox()
-                })
+//                gmailApi = GmailAPI(successHandler: { [weak self] _ in
+//                    self?.fetchInbox()
+//                })
             }
         }
     }
