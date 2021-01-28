@@ -17,6 +17,9 @@
 		E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265725B7ACEB00F6753E /* MainMailApp.swift */; };
 		E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265825B7ACEB00F6753E /* MainMail.swift */; };
 		E735266F25B7ACEC00F6753E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735265925B7ACEC00F6753E /* Assets.xcassets */; };
+		E784C7AF25C27212008B39F6 /* EmailFilterEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7AE25C27212008B39F6 /* EmailFilterEntries.swift */; };
+		E784C7B225C2727D008B39F6 /* EmailFilterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7B125C2727D008B39F6 /* EmailFilterInput.swift */; };
+		E784C7B625C2729B008B39F6 /* EmailFilterEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7B525C2729B008B39F6 /* EmailFilterEntry.swift */; };
 		E7AF3AB125B8BAAE00F4348D /* WaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770F20625B8B999003D4630 /* WaveBackground.swift */; };
 		E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770F20725B8B9BD003D4630 /* Logo.swift */; };
 		E7AF3ABB25B8C73900F4348D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF3ABA25B8C73900F4348D /* Menu.swift */; };
@@ -40,6 +43,9 @@
 		E735266925B7ACEC00F6753E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E770F20625B8B999003D4630 /* WaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground.swift; sourceTree = "<group>"; };
 		E770F20725B8B9BD003D4630 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		E784C7AE25C27212008B39F6 /* EmailFilterEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFilterEntries.swift; sourceTree = "<group>"; };
+		E784C7B125C2727D008B39F6 /* EmailFilterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFilterInput.swift; sourceTree = "<group>"; };
+		E784C7B525C2729B008B39F6 /* EmailFilterEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFilterEntry.swift; sourceTree = "<group>"; };
 		E7AF3ABA25B8C73900F4348D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,17 +83,14 @@
 		E735265625B7ACEB00F6753E /* Main Mail */ = {
 			isa = PBXGroup;
 			children = (
-				E72827C325C0F40900C5295C /* EmailFilter.swift */,
-				E728279425BF598800C5295C /* GmailAPI.swift */,
-				E728278225BE3DCD00C5295C /* GoogleOAuth.swift */,
-				E770F20725B8B9BD003D4630 /* Logo.swift */,
+				E784C7BE25C272DD008B39F6 /* EmailFilterViews */,
+				E784C7C025C272EC008B39F6 /* GoogleServices */,
+				E784C7C525C2733B008B39F6 /* MenuBar */,
+				E784C7C325C272F8008B39F6 /* SignInViews */,
+				E784C7C725C27354008B39F6 /* GenericViews */,
 				E735265825B7ACEB00F6753E /* MainMail.swift */,
 				E735265725B7ACEB00F6753E /* MainMailApp.swift */,
 				E72827BB25C0E56200C5295C /* MainMailManager.swift */,
-				E7AF3ABA25B8C73900F4348D /* Menu.swift */,
-				E701724925BA3A02007036B6 /* SignIn.swift */,
-				E728278825BE4EAF00C5295C /* SignInButton.swift */,
-				E770F20625B8B999003D4630 /* WaveBackground.swift */,
 				E735265925B7ACEC00F6753E /* Assets.xcassets */,
 				E735266825B7ACEC00F6753E /* Info.plist */,
 				E735266925B7ACEC00F6753E /* macOS.entitlements */,
@@ -101,6 +104,52 @@
 				E735266625B7ACEC00F6753E /* Main Mail.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E784C7BE25C272DD008B39F6 /* EmailFilterViews */ = {
+			isa = PBXGroup;
+			children = (
+				E72827C325C0F40900C5295C /* EmailFilter.swift */,
+				E784C7AE25C27212008B39F6 /* EmailFilterEntries.swift */,
+				E784C7B525C2729B008B39F6 /* EmailFilterEntry.swift */,
+				E784C7B125C2727D008B39F6 /* EmailFilterInput.swift */,
+			);
+			path = EmailFilterViews;
+			sourceTree = "<group>";
+		};
+		E784C7C025C272EC008B39F6 /* GoogleServices */ = {
+			isa = PBXGroup;
+			children = (
+				E728279425BF598800C5295C /* GmailAPI.swift */,
+				E728278225BE3DCD00C5295C /* GoogleOAuth.swift */,
+			);
+			path = GoogleServices;
+			sourceTree = "<group>";
+		};
+		E784C7C325C272F8008B39F6 /* SignInViews */ = {
+			isa = PBXGroup;
+			children = (
+				E701724925BA3A02007036B6 /* SignIn.swift */,
+				E728278825BE4EAF00C5295C /* SignInButton.swift */,
+			);
+			path = SignInViews;
+			sourceTree = "<group>";
+		};
+		E784C7C525C2733B008B39F6 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				E7AF3ABA25B8C73900F4348D /* Menu.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		E784C7C725C27354008B39F6 /* GenericViews */ = {
+			isa = PBXGroup;
+			children = (
+				E770F20725B8B9BD003D4630 /* Logo.swift */,
+				E770F20625B8B999003D4630 /* WaveBackground.swift */,
+			);
+			path = GenericViews;
 			sourceTree = "<group>";
 		};
 		EE61C84949DBBEE5051509B4 /* Frameworks */ = {
@@ -224,8 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */,
+				E784C7B625C2729B008B39F6 /* EmailFilterEntry.swift in Sources */,
+				E784C7B225C2727D008B39F6 /* EmailFilterInput.swift in Sources */,
 				E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */,
 				E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */,
+				E784C7AF25C27212008B39F6 /* EmailFilterEntries.swift in Sources */,
 				E72827BC25C0E56200C5295C /* MainMailManager.swift in Sources */,
 				E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */,
 				E7AF3ABB25B8C73900F4348D /* Menu.swift in Sources */,

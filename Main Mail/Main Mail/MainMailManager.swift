@@ -16,6 +16,7 @@ struct Email {
 }
 
 class MainMailManager: ObservableObject {
+    @Published private(set) var emailsToInclude = [String]()
     @Published private(set) var inbox: [Email] = [] {
         didSet {
             print(inbox.last?.id ?? "N/A")
@@ -37,7 +38,7 @@ class MainMailManager: ObservableObject {
     }
     private var gmailApi: GmailAPI?
 
-    func fetchInbox() {
+    private func fetchInbox() {
         gmailApi?.get(resource: .messages, successHandler: { response in
             if let response = response as? [String:Any],
                let messages = response["messages"] as? [[String:Any]] {
@@ -48,7 +49,7 @@ class MainMailManager: ObservableObject {
         })
     }
     
-    func fetch(email: [String:Any]) {
+    private func fetch(email: [String:Any]) {
         if let id = email["id"] as? String {
             gmailApi?.get(resource: .message(id: id), successHandler: { response in
                 if let response = response as? [String:Any],
@@ -68,7 +69,7 @@ class MainMailManager: ObservableObject {
         }
     }
     
-    func extractHeaderInformation(from header: [[String:Any]]) -> (date: String, from: String, subject: String) {
+    private func extractHeaderInformation(from header: [[String:Any]]) -> (date: String, from: String, subject: String) {
         var date, from, subject: String
         
         date = header.filter { entry in
@@ -84,5 +85,19 @@ class MainMailManager: ObservableObject {
         }.first?["value"] as? String ?? "No Subject"
         
         return (date, from, subject)
+    }
+    
+    // MARK: - Intent[s]
+    
+    func include(email: String) {
+        if !email.isEmpty, !emailsToInclude.contains(email) {
+            emailsToInclude.append(email)
+        }
+    }
+    
+    func exclude(email: String) {
+        if !email.isEmpty, emailsToInclude.contains(email) {
+            emailsToInclude.removeAll(where: { $0 == email})
+        }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainMail: View {
-    @ObservedObject var mainMailManager: MainMailManager
+    @EnvironmentObject var mainMailManager: MainMailManager
 
     var body: some View {
         ZStack {

@@ -15,10 +15,11 @@ struct MainMailApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainMail(mainMailManager: mainMailManager).onAppear {
+            MainMail().onAppear {
                 // Try to restore the previous authentication state.
                 mainMailManager.isSignedIn = GoogleOAuth.restoreAuthState()
             }
+            .environmentObject(mainMailManager)
         }
     }
 }
