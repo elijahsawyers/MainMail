@@ -17,6 +17,7 @@
 		E735266B25B7ACEC00F6753E /* MainMailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265725B7ACEB00F6753E /* MainMailApp.swift */; };
 		E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735265825B7ACEB00F6753E /* MainMail.swift */; };
 		E735266F25B7ACEC00F6753E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735265925B7ACEC00F6753E /* Assets.xcassets */; };
+		E74465E625C396240014C129 /* MenuEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74465E525C396240014C129 /* MenuEmail.swift */; };
 		E784C7AF25C27212008B39F6 /* EmailFilterEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7AE25C27212008B39F6 /* EmailFilterEntries.swift */; };
 		E784C7B225C2727D008B39F6 /* EmailFilterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7B125C2727D008B39F6 /* EmailFilterInput.swift */; };
 		E784C7B625C2729B008B39F6 /* EmailFilterEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7B525C2729B008B39F6 /* EmailFilterEntry.swift */; };
@@ -41,6 +42,7 @@
 		E735266625B7ACEC00F6753E /* Main Mail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Main Mail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E735266825B7ACEC00F6753E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E735266925B7ACEC00F6753E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E74465E525C396240014C129 /* MenuEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEmail.swift; sourceTree = "<group>"; };
 		E770F20625B8B999003D4630 /* WaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground.swift; sourceTree = "<group>"; };
 		E770F20725B8B9BD003D4630 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		E784C7AE25C27212008B39F6 /* EmailFilterEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFilterEntries.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AF3ABA25B8C73900F4348D /* Menu.swift */,
+				E74465E525C396240014C129 /* MenuEmail.swift */,
 			);
 			path = MenuBar;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */,
+				E74465E625C396240014C129 /* MenuEmail.swift in Sources */,
 				E784C7B625C2729B008B39F6 /* EmailFilterEntry.swift in Sources */,
 				E784C7B225C2727D008B39F6 /* EmailFilterInput.swift in Sources */,
 				E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */,

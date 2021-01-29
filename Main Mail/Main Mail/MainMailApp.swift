@@ -26,6 +26,7 @@ struct MainMailApp: App {
 
 /// Using the `AppDelegate` as there doesn't appear to be a way to add a menu bar item without it yet.
 class AppDelegate: NSResponder, NSApplicationDelegate {
+    let popover: NSPopover = NSPopover()
     var menuBarItem: NSStatusItem!
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
 
@@ -51,11 +52,35 @@ class AppDelegate: NSResponder, NSApplicationDelegate {
 extension AppDelegate {
     func configureMenuBarItem() {
         // Setup the NSMenu.
-        self.menuBarItem.menu = Menu()
+        menuBarItem.menu = NSMenu()
 
         // Configure the button image.
         if let button = self.menuBarItem.button {
             button.image = NSImage(systemSymbolName: "envelope", accessibilityDescription: nil)
+            let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(togglePopover(_:)))
+            clickGesture.numberOfClicksRequired = 1
+            button.addGestureRecognizer(clickGesture)
         }
+        
+        // Set the content.
+        popover.contentViewController = NSHostingController(rootView: Menu())
+    }
+    
+    @objc func togglePopover(_ sender: Any?) {
+        if popover.isShown {
+            closePopover(sender: sender)
+        } else {
+            showPopover(sender: sender)
+        }
+    }
+    
+    func showPopover(sender: Any?) {
+        if let button =  menuBarItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        }
+    }
+    
+    func closePopover(sender: Any?) {
+        popover.performClose(sender)
     }
 }
