@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct Email {
+struct Email: Identifiable, Equatable {
     private(set) var id: String
     private(set) var date: String
     private(set) var from: String
     private(set) var subject: String
     private(set) var snippet: String
+    
+    static func ==(_ lhs: Email, _ rhs: Email) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 class MainMailManager: ObservableObject {
@@ -30,9 +34,9 @@ class MainMailManager: ObservableObject {
     @Published var isSignedIn: Bool = false {
         didSet {
             if isSignedIn {
-//                gmailApi = GmailAPI(successHandler: { [weak self] _ in
-//                    self?.fetchInbox()
-//                })
+                gmailApi = GmailAPI(successHandler: { [weak self] _ in
+                    self?.fetchInbox()
+                })
             }
         }
     }

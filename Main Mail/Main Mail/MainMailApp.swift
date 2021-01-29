@@ -18,8 +18,12 @@ struct MainMailApp: App {
             MainMail().onAppear {
                 // Try to restore the previous authentication state.
                 mainMailManager.isSignedIn = GoogleOAuth.restoreAuthState()
+                
+                // Pass the state object to the app delegate so that it can be accessed
+                // from the menu bar.
+                appDelegate.mainMailManager = mainMailManager
             }
-            .environmentObject(mainMailManager)
+                .environmentObject(mainMailManager)
         }
     }
 }
@@ -29,6 +33,7 @@ class AppDelegate: NSResponder, NSApplicationDelegate {
     let popover: NSPopover = NSPopover()
     var menuBarItem: NSStatusItem!
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
+    var mainMailManager: MainMailManager?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Set the app delegate.
@@ -63,7 +68,9 @@ extension AppDelegate {
         }
         
         // Set the content.
-        popover.contentViewController = NSHostingController(rootView: Menu())
+        if let mainMailManager = mainMailManager {
+            popover.contentViewController = NSHostingController(rootView: Menu(mainMailManager: mainMailManager))
+        }
     }
     
     @objc func togglePopover(_ sender: Any?) {

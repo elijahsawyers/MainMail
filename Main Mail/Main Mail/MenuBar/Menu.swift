@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct Menu: View {
+    @ObservedObject var mainMailManager: MainMailManager
+
     var body: some View {
         ScrollView {
             ScrollViewSpacer
-            ForEach(0..<5) { i in
-                MenuEmail(includeDivider: i != 4)
+            ForEach(mainMailManager.inbox) { email in
+                let includeDivider =
+                    mainMailManager.inbox.last != nil ?
+                        email != mainMailManager.inbox.last! :
+                        false
+                MenuEmail(email, includeDivider: includeDivider)
             }
             ScrollViewSpacer
         }
