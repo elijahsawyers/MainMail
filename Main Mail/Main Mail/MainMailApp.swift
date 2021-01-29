@@ -51,6 +51,10 @@ class AppDelegate: NSResponder, NSApplicationDelegate {
             self.currentAuthorizationFlow = nil
         }
     }
+    
+    func applicationWillResignActive(_ notification: Notification) {
+        closePopover(sender: self)
+    }
 }
 
 /// Extension to configure the menu bar item.
@@ -82,7 +86,9 @@ extension AppDelegate {
     }
     
     func showPopover(sender: Any?) {
-        if let button =  menuBarItem.button {
+        if let button = menuBarItem.button {
+            popover.behavior = NSPopover.Behavior.transient
+            NSApp.activate(ignoringOtherApps: true)
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
     }
