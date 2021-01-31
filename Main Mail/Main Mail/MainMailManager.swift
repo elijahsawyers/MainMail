@@ -64,9 +64,9 @@ class MainMailManager: ObservableObject {
                         self.inbox.append(Email(
                             id: id,
                             date: date,
-                            from: from,
-                            subject: subject,
-                            snippet: snippet
+                            from: String(htmlEncodedString: from) ?? from,
+                            subject: String(htmlEncodedString: subject) ?? subject,
+                            snippet: String(htmlEncodedString: snippet) ?? snippet
                         ))
                 }
             })
