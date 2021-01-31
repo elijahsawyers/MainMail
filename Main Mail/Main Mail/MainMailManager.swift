@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct Email: Identifiable, Equatable {
-    private(set) var id: String
-    private(set) var date: Date
-    private(set) var from: String
-    private(set) var subject: String
-    private(set) var snippet: String
-    
-    static func ==(_ lhs: Email, _ rhs: Email) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class MainMailManager: ObservableObject {
     @Published private(set) var emailsToInclude = [String]()
     @Published private(set) var inbox: [Email] = []
@@ -52,7 +40,7 @@ class MainMailManager: ObservableObject {
                    let snippet = response["snippet"] as? String,
                    let headers = payload["headers"] as? [[String:Any]] {
                         let (date, from, subject) = self.extractHeaderInformation(from: headers)
-                        self.inbox.append(Email(
+                        self.inbox.appendSorted(Email(
                             id: id,
                             date: Date.from(string: date)!,
                             from: String(htmlEncodedString: from) ?? from,

@@ -19,7 +19,7 @@ extension Date {
     func localizedDescription(
         dateStyle: DateFormatter.Style = .medium,
         timeStyle: DateFormatter.Style = .medium,
-     in timeZone : TimeZone            = .gmt,
+     in timeZone : TimeZone            = .current,
         locale   : Locale              = .current
     ) -> String {
         Formatter.date.locale = locale

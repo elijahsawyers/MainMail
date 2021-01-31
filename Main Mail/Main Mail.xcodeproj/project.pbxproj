@@ -12,6 +12,8 @@
 		E70408FF25C4DEB600FBC40F /* String+HTMLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70408FE25C4DEB600FBC40F /* String+HTMLEncoding.swift */; };
 		E704090625C739DD00FBC40F /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090525C739DD00FBC40F /* Date+String.swift */; };
 		E704090A25C73B3E00FBC40F /* Date+LocalizedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */; };
+		E704090F25C7490200FBC40F /* Array+SortedAppend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090E25C7490200FBC40F /* Array+SortedAppend.swift */; };
+		E704091325C74C0B00FBC40F /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704091225C74C0B00FBC40F /* Email.swift */; };
 		E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728278225BE3DCD00C5295C /* GoogleOAuth.swift */; };
 		E728278925BE4EAF00C5295C /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728278825BE4EAF00C5295C /* SignInButton.swift */; };
 		E728279525BF598800C5295C /* GmailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728279425BF598800C5295C /* GmailAPI.swift */; };
@@ -37,6 +39,8 @@
 		E70408FE25C4DEB600FBC40F /* String+HTMLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLEncoding.swift"; sourceTree = "<group>"; };
 		E704090525C739DD00FBC40F /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedDescription.swift"; sourceTree = "<group>"; };
+		E704090E25C7490200FBC40F /* Array+SortedAppend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SortedAppend.swift"; sourceTree = "<group>"; };
+		E704091225C74C0B00FBC40F /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		E728278225BE3DCD00C5295C /* GoogleOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleOAuth.swift; sourceTree = "<group>"; };
 		E728278825BE4EAF00C5295C /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		E728279425BF598800C5295C /* GmailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailAPI.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		E704090225C4DEBD00FBC40F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E704090E25C7490200FBC40F /* Array+SortedAppend.swift */,
 				E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */,
 				E704090525C739DD00FBC40F /* Date+String.swift */,
 				E70408FE25C4DEB600FBC40F /* String+HTMLEncoding.swift */,
@@ -107,6 +112,7 @@
 				E784C7C325C272F8008B39F6 /* SignInViews */,
 				E784C7C725C27354008B39F6 /* GenericViews */,
 				E704090225C4DEBD00FBC40F /* Extensions */,
+				E704091225C74C0B00FBC40F /* Email.swift */,
 				E735265825B7ACEB00F6753E /* MainMail.swift */,
 				E735265725B7ACEB00F6753E /* MainMailApp.swift */,
 				E72827BB25C0E56200C5295C /* MainMailManager.swift */,
@@ -293,10 +299,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */,
+				E704090F25C7490200FBC40F /* Array+SortedAppend.swift in Sources */,
 				E704090A25C73B3E00FBC40F /* Date+LocalizedDescription.swift in Sources */,
 				E74465E625C396240014C129 /* MenuEmail.swift in Sources */,
 				E70408FF25C4DEB600FBC40F /* String+HTMLEncoding.swift in Sources */,
 				E784C7B625C2729B008B39F6 /* EmailFilterEntry.swift in Sources */,
+				E704091325C74C0B00FBC40F /* Email.swift in Sources */,
 				E784C7B225C2727D008B39F6 /* EmailFilterInput.swift in Sources */,
 				E7AF3AB325B8BAB400F4348D /* Logo.swift in Sources */,
 				E735266D25B7ACEC00F6753E /* MainMail.swift in Sources */,
