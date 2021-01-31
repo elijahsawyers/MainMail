@@ -57,15 +57,15 @@ struct MenuEmailFrom: View {
 }
 
 struct MenuEmailDate: View {
-    var date: String
+    var date: Date
     
-    init(_ date: String) {
+    init(_ date: Date) {
         self.date = date
     }
 
     var body: some View {
         HStack {
-            Text(date)
+            Text("\(date.mediumDateTime)")
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)

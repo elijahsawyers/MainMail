@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Email: Identifiable, Equatable {
     private(set) var id: String
-    private(set) var date: String
+    private(set) var date: Date
     private(set) var from: String
     private(set) var subject: String
     private(set) var snippet: String
@@ -21,16 +21,7 @@ struct Email: Identifiable, Equatable {
 
 class MainMailManager: ObservableObject {
     @Published private(set) var emailsToInclude = [String]()
-    @Published private(set) var inbox: [Email] = [] {
-        didSet {
-            print(inbox.last?.id ?? "N/A")
-            print(inbox.last?.date ?? "N/A")
-            print(inbox.last?.from ?? "N/A")
-            print(inbox.last?.subject ?? "N/A")
-            print(inbox.last?.snippet ?? "N/A")
-            print("\n\n")
-        }
-    }
+    @Published private(set) var inbox: [Email] = []
     @Published var isSignedIn: Bool = false {
         didSet {
             if isSignedIn {
@@ -63,7 +54,7 @@ class MainMailManager: ObservableObject {
                         let (date, from, subject) = self.extractHeaderInformation(from: headers)
                         self.inbox.append(Email(
                             id: id,
-                            date: date,
+                            date: Date.from(string: date)!,
                             from: String(htmlEncodedString: from) ?? from,
                             subject: String(htmlEncodedString: subject) ?? subject,
                             snippet: String(htmlEncodedString: snippet) ?? snippet
