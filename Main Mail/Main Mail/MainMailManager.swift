@@ -9,7 +9,6 @@ import SwiftUI
 
 class MainMailManager: ObservableObject {
     @Published private(set) var emailsToInclude = [String]()
-    @Published private(set) var inbox: [Email] = []
     @Published var isSignedIn: Bool = false {
         didSet {
             if isSignedIn {
@@ -20,6 +19,11 @@ class MainMailManager: ObservableObject {
         }
     }
     private var gmailApi: GmailAPI?
+    private var context: NSManagedObjectContext
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
 
     private func fetchInbox() {
         gmailApi?.get(resource: .messages, successHandler: { response in
@@ -40,13 +44,14 @@ class MainMailManager: ObservableObject {
                    let snippet = response["snippet"] as? String,
                    let headers = payload["headers"] as? [[String:Any]] {
                         let (date, from, subject) = self.extractHeaderInformation(from: headers)
-                        self.inbox.appendSorted(Email(
+                        Email.addToInbox(
                             id: id,
                             date: Date.from(string: date)!,
                             from: String(htmlEncodedString: from) ?? from,
                             subject: String(htmlEncodedString: subject) ?? subject,
-                            snippet: String(htmlEncodedString: snippet) ?? snippet
-                        ))
+                            snippet: String(htmlEncodedString: snippet) ?? snippet,
+                            context: self.context
+                        )
                 }
             })
         }

@@ -11,7 +11,9 @@ import AppAuth
 @main
 struct MainMailApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject var mainMailManager = MainMailManager()
+    @StateObject var mainMailManager = MainMailManager(
+        context: PersistenceController.shared.container.viewContext
+    )
 
     var body: some Scene {
         WindowGroup {
@@ -72,9 +74,11 @@ extension AppDelegate {
         }
         
         // Set the content.
-        if let mainMailManager = mainMailManager {
-            popover.contentViewController = NSHostingController(rootView: Menu(mainMailManager: mainMailManager))
-        }
+        let menuView = Menu().environment(
+            \.managedObjectContext,
+            PersistenceController.shared.container.viewContext
+        )
+        popover.contentViewController = NSHostingController(rootView: menuView)
     }
     
     @objc func togglePopover(_ sender: Any?) {
