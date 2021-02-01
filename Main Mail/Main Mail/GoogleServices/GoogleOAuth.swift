@@ -82,4 +82,10 @@ struct GoogleOAuth {
             return false
         }
     }
+    
+    /// Removes the previous `OIDAuthState` object from `Self` and from the keychain.
+    static func removeAuthState() {
+        KeychainSwift().delete(authStateKeychainKey)
+        authState = nil
+    }
 }

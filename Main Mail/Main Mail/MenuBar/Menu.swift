@@ -13,16 +13,23 @@ struct Menu: View {
     @ObservedObject var mainMailManager: MainMailManager
 
     var body: some View {
-        ScrollView {
-            ScrollViewSpacer
-            ForEach(emails) { email in
-                if shouldShow(email: email.from) {
-                    MenuEmail(email, includeDivider: email != emails.last)
+        if mainMailManager.isSignedIn {
+            ScrollView {
+                ScrollViewSpacer
+                ForEach(emails) { email in
+                    if shouldShow(email: email.from) {
+                        MenuEmail(email, includeDivider: email != emails.last)
+                    }
                 }
+                ScrollViewSpacer
             }
-            ScrollViewSpacer
+            .frame(width: frame.width, height: frame.height)
+        } else {
+            VStack {
+                Text("Sign in to view emails.")
+            }
+            .frame(width: frame.width, height: frame.height)
         }
-        .frame(width: frame.width, height: frame.height)
     }
     
     func shouldShow(email: String) -> Bool {

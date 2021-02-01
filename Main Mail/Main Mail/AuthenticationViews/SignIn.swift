@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SignIn: View {
+    var successHandler: (() -> Void)?
+    
+    init(successHandler: (() -> Void)? = nil) {
+        self.successHandler = successHandler
+    }
+    
     var body: some View {
         VStack() {
             Text("Sign into your email below.")
@@ -20,7 +26,7 @@ struct SignIn: View {
                 )
             SignInButton(image: "Google", text: "Sign in with Google") {
                 GoogleOAuth.signIn({
-                    // TODO: Change app state for successful sign in.
+                    successHandler?()
                 }, { error in
                     // TODO: Alert the user that the login failed.
                 })

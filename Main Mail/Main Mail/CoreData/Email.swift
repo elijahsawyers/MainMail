@@ -24,6 +24,11 @@ extension Email: Comparable {
         get { from_! }
         set { from_ = newValue }
     }
+
+    public var formattedFrom: String {
+        get { formattedFrom_! }
+        set { formattedFrom_ = newValue }
+    }
     
     public var subject: String {
         get { subject_! }
@@ -46,6 +51,7 @@ extension Email: Comparable {
         id: String,
         date: Date,
         from: String,
+        formattedFrom: String,
         subject: String,
         snippet: String,
         context: NSManagedObjectContext
@@ -58,6 +64,7 @@ extension Email: Comparable {
             email.id = id
             email.date = date
             email.from = from
+            email.formattedFrom = formattedFrom
             email.subject = subject
             email.snippet = snippet
             do {

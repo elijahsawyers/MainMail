@@ -18,10 +18,10 @@ struct MenuEmail: View {
 
     var body: some View {
         VStack() {
-            MenuEmailFrom(email.from)
-            MenuEmailDate(email.date)
-            MenuEmailSubject(email.subject)
-            MenuEmailBody(email.snippet)
+            MenuEmailFrom(from: email.formattedFrom)
+            MenuEmailDate(date: email.date)
+            MenuEmailSubject(subject: email.subject)
+            MenuEmailBody(snippet: email.snippet)
             if includeDivider { Divider() }
         }
         .frame(width: frameWidth)
@@ -34,14 +34,10 @@ struct MenuEmail: View {
 
 struct MenuEmailFrom: View {
     var from: String
-    
-    init(_ from: String) {
-        self.from = from
-    }
 
     var body: some View {
         HStack {
-            Text(String(htmlEncodedString: from) ?? from)
+            Text(from)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)
@@ -58,10 +54,6 @@ struct MenuEmailFrom: View {
 
 struct MenuEmailDate: View {
     var date: Date
-    
-    init(_ date: Date) {
-        self.date = date
-    }
 
     var body: some View {
         HStack {
@@ -82,14 +74,10 @@ struct MenuEmailDate: View {
 
 struct MenuEmailSubject: View {
     var subject: String
-    
-    init(_ subject: String) {
-        self.subject = subject
-    }
 
     var body: some View {
         HStack {
-            Text(String(htmlEncodedString: subject) ?? subject)
+            Text(subject)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)
@@ -106,14 +94,10 @@ struct MenuEmailSubject: View {
 
 struct MenuEmailBody: View {
     var snippet: String
-    
-    init(_ snippet: String) {
-        self.snippet = snippet
-    }
 
     var body: some View {
         HStack {
-            Text(String(htmlEncodedString: snippet) ?? snippet)
+            Text(snippet)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)

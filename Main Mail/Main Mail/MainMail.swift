@@ -18,11 +18,16 @@ struct MainMail: View {
                     Logo()
                         .padding()
                     Spacer()
+                    if mainMailManager.isSignedIn {
+                        SignOutButton(action: mainMailManager.signOut)
+                    }
                 }
                 Spacer()
             }
             if let isSignedIn = mainMailManager.isSignedIn, !isSignedIn {
-                SignIn()
+                SignIn(successHandler: {
+                    mainMailManager.isSignedIn = true
+                })
             } else if let isSignedIn = mainMailManager.isSignedIn, isSignedIn {
                 EmailFilter()
             }

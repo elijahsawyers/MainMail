@@ -16,6 +16,9 @@ class MainMailManager: ObservableObject {
             // Once it's been established that the user is signed in,
             // setup the timer to fetch inbox every minute.
             if isSignedIn {
+                timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
+                    self.fetchInbox()
+                }
                 gmailApi = GmailAPI(successHandler: { [weak self] _ in
                     self?.timer?.fire()
                 })
@@ -28,9 +31,6 @@ class MainMailManager: ObservableObject {
 
     init(context: NSManagedObjectContext) {
         self.context = context
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
-            self.fetchInbox()
-        }
         if let emailsToInclude =
             UserDefaults.standard.array(forKey: Self.emailsToIncludeUserDefaultsKey) as? [String] {
             self.emailsToInclude = emailsToInclude
@@ -70,8 +70,9 @@ class MainMailManager: ObservableObject {
                             id: id,
                             date: Date.from(string: date)!,
                             from: from,
-                            subject: subject,
-                            snippet: snippet,
+                            formattedFrom: String(htmlEncodedString: from) ?? from,
+                            subject: String(htmlEncodedString: subject) ?? subject,
+                            snippet: String(htmlEncodedString: snippet) ?? snippet,
                             context: self.context
                         )
                 }
@@ -111,5 +112,36 @@ class MainMailManager: ObservableObject {
             emailsToInclude.removeAll(where: { $0 == email})
             UserDefaults.standard.setValue(emailsToInclude, forKey: Self.emailsToIncludeUserDefaultsKey)
         }
+    }
+    
+    func signOut() {
+        // Invalidate the email fetching timer.
+        timer?.invalidate()
+        
+        // Remove the instance of the GmailAPI.
+        gmailApi = nil
+        
+        // Clear User Defaults.
+        UserDefaults.standard.setValue(nil, forKey: Self.emailsToIncludeUserDefaultsKey)
+        
+        // Clear Core Data.
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Email.entityName)
+        fetchRequest.returnsObjectsAsFaults = false
+        if let results = try? context.fetch(fetchRequest) {
+            for object in results {
+                guard let objectData = object as? NSManagedObject else { continue }
+                context.delete(objectData)
+            }
+            try? context.save()
+        }
+        
+        // Clear the emailsToInclude.
+        emailsToInclude = []
+        
+        // Remove the auth state.
+        GoogleOAuth.removeAuthState()
+        
+        // Change the isSignedIn flag.
+        isSignedIn = false
     }
 }
