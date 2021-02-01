@@ -21,7 +21,7 @@ class GmailAPI {
      */
     
     enum RESTResource {
-        case messages
+        case messages(after: Date? = nil)
         case message(id: String)
     }
     
@@ -37,8 +37,13 @@ class GmailAPI {
                 .replacingOccurrences(of: "{userId}", with: userId)
         }
         
-        static func messages(with userId: String) -> RESTResourceURL {
-            RESTResourceURL(baseURL(with: userId) + "/messages")
+        static func messages(with userId: String, after date: Date?) -> RESTResourceURL {
+            var query = ""
+            if date != nil {
+                let seconds = Int(date!.timeIntervalSince1970)
+                query = "?q=after:\(seconds)"
+            }
+            return RESTResourceURL(baseURL(with: userId) + "/messages\(query)")
         }
 
         static func message(with userId: String, id: String) -> RESTResourceURL {
@@ -124,8 +129,8 @@ class GmailAPI {
             // Build the request URL.
             var restResourceUrl: RESTResourceURL
             switch resource {
-            case .messages:
-                restResourceUrl = RESTResourceURL.messages(with: email)
+            case .messages(let date):
+                restResourceUrl = RESTResourceURL.messages(with: email, after: date)
             case .message(let id):
                 restResourceUrl = RESTResourceURL.message(with: email, id: id)
             }

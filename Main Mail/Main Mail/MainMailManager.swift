@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 class MainMailManager: ObservableObject {
     @Published private(set) var emailsToInclude = [String]()
@@ -26,7 +27,13 @@ class MainMailManager: ObservableObject {
     }
 
     private func fetchInbox() {
-        gmailApi?.get(resource: .messages, successHandler: { response in
+        var resource: GmailAPI.RESTResource = .messages()
+        let request = Email.fetchRequest(.all)
+        request.fetchLimit = 1
+        if let lastEmail = (try? context.fetch(request))?.first {
+            resource = .messages(after: lastEmail.date)
+        }
+        gmailApi?.get(resource: resource, successHandler: { response in
             if let response = response as? [String:Any],
                let messages = response["messages"] as? [[String:Any]] {
                 for message in messages {
