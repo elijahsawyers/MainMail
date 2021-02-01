@@ -15,8 +15,9 @@
 ## Demo
 
 <p align="center">
-  <img width="400" src="https://github.com/elijahsawyers/MainMail/raw/master/Assets/appscene.png"/>
-  <img width="435" src="https://github.com/elijahsawyers/MainMail/raw/master/Assets/menubar.png"/>
+  <img width="275" src="https://github.com/elijahsawyers/MainMail/raw/master/Assets/appscene.png"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="300" src="https://github.com/elijahsawyers/MainMail/raw/master/Assets/menubar.png"/>
 </p>
 
 ## How To Use
