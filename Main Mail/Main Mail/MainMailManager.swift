@@ -12,18 +12,28 @@ class MainMailManager: ObservableObject {
     @Published private(set) var emailsToInclude = [String]()
     @Published var isSignedIn: Bool = false {
         didSet {
+            // Once it's been established that the user is signed in,
+            // setup the timer to fetch inbox every minute.
             if isSignedIn {
                 gmailApi = GmailAPI(successHandler: { [weak self] _ in
-                    self?.fetchInbox()
+                    self?.timer?.fire()
                 })
             }
         }
     }
     private var gmailApi: GmailAPI?
     private var context: NSManagedObjectContext
+    private var timer: Timer?
 
     init(context: NSManagedObjectContext) {
         self.context = context
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
+            self.fetchInbox()
+        }
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
 
     private func fetchInbox() {
