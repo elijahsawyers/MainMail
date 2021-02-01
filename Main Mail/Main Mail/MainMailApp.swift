@@ -74,11 +74,13 @@ extension AppDelegate {
         }
         
         // Set the content.
-        let menuView = Menu().environment(
-            \.managedObjectContext,
-            PersistenceController.shared.container.viewContext
-        )
-        popover.contentViewController = NSHostingController(rootView: menuView)
+        if let mainMailManager = mainMailManager {
+            let menuView = Menu(mainMailManager: mainMailManager).environment(
+                \.managedObjectContext,
+                PersistenceController.shared.container.viewContext
+            )
+            popover.contentViewController = NSHostingController(rootView: menuView)
+        }
     }
     
     @objc func togglePopover(_ sender: Any?) {

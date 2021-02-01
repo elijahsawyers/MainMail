@@ -41,7 +41,7 @@ struct MenuEmailFrom: View {
 
     var body: some View {
         HStack {
-            Text(from)
+            Text(String(htmlEncodedString: from) ?? from)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)
@@ -89,7 +89,7 @@ struct MenuEmailSubject: View {
 
     var body: some View {
         HStack {
-            Text(subject)
+            Text(String(htmlEncodedString: subject) ?? subject)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)
@@ -113,7 +113,7 @@ struct MenuEmailBody: View {
 
     var body: some View {
         HStack {
-            Text(snippet)
+            Text(String(htmlEncodedString: snippet) ?? snippet)
                 .padding(.horizontal, padding)
                 .font(font)
                 .lineLimit(lineLimit)

@@ -12,7 +12,6 @@
 		E70408FF25C4DEB600FBC40F /* String+HTMLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70408FE25C4DEB600FBC40F /* String+HTMLEncoding.swift */; };
 		E704090625C739DD00FBC40F /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090525C739DD00FBC40F /* Date+String.swift */; };
 		E704090A25C73B3E00FBC40F /* Date+LocalizedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */; };
-		E704090F25C7490200FBC40F /* Array+SortedAppend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704090E25C7490200FBC40F /* Array+SortedAppend.swift */; };
 		E704091325C74C0B00FBC40F /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704091225C74C0B00FBC40F /* Email.swift */; };
 		E704091D25C7520600FBC40F /* EmailInbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E704091B25C7520600FBC40F /* EmailInbox.xcdatamodeld */; };
 		E704095025C7530200FBC40F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704094F25C7530200FBC40F /* Persistence.swift */; };
@@ -42,7 +41,6 @@
 		E70408FE25C4DEB600FBC40F /* String+HTMLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLEncoding.swift"; sourceTree = "<group>"; };
 		E704090525C739DD00FBC40F /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedDescription.swift"; sourceTree = "<group>"; };
-		E704090E25C7490200FBC40F /* Array+SortedAppend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SortedAppend.swift"; sourceTree = "<group>"; };
 		E704091225C74C0B00FBC40F /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		E704091C25C7520600FBC40F /* EmailInbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmailInbox.xcdatamodel; sourceTree = "<group>"; };
 		E704094F25C7530200FBC40F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		E704090225C4DEBD00FBC40F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E704090E25C7490200FBC40F /* Array+SortedAppend.swift */,
 				E704090925C73B3E00FBC40F /* Date+LocalizedDescription.swift */,
 				E704090525C739DD00FBC40F /* Date+String.swift */,
 				E704098D25C7780900FBC40F /* Foundation+NSPredicate.swift */,
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E728278325BE3DCD00C5295C /* GoogleOAuth.swift in Sources */,
-				E704090F25C7490200FBC40F /* Array+SortedAppend.swift in Sources */,
 				E704098E25C7780900FBC40F /* Foundation+NSPredicate.swift in Sources */,
 				E704091D25C7520600FBC40F /* EmailInbox.xcdatamodeld in Sources */,
 				E704090A25C73B3E00FBC40F /* Date+LocalizedDescription.swift in Sources */,

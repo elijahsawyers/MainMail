@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 class MainMailManager: ObservableObject {
+    static private let emailsToIncludeUserDefaultsKey = "MainMain.EmailsToInclude"
     @Published private(set) var emailsToInclude = [String]()
     @Published var isSignedIn: Bool = false {
         didSet {
@@ -29,6 +30,10 @@ class MainMailManager: ObservableObject {
         self.context = context
         timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
             self.fetchInbox()
+        }
+        if let emailsToInclude =
+            UserDefaults.standard.array(forKey: Self.emailsToIncludeUserDefaultsKey) as? [String] {
+            self.emailsToInclude = emailsToInclude
         }
     }
     
@@ -64,9 +69,9 @@ class MainMailManager: ObservableObject {
                         Email.addToInbox(
                             id: id,
                             date: Date.from(string: date)!,
-                            from: String(htmlEncodedString: from) ?? from,
-                            subject: String(htmlEncodedString: subject) ?? subject,
-                            snippet: String(htmlEncodedString: snippet) ?? snippet,
+                            from: from,
+                            subject: subject,
+                            snippet: snippet,
                             context: self.context
                         )
                 }
@@ -97,12 +102,14 @@ class MainMailManager: ObservableObject {
     func include(email: String) {
         if !email.isEmpty, !emailsToInclude.contains(email) {
             emailsToInclude.append(email)
+            UserDefaults.standard.setValue(emailsToInclude, forKey: Self.emailsToIncludeUserDefaultsKey)
         }
     }
     
     func exclude(email: String) {
         if !email.isEmpty, emailsToInclude.contains(email) {
             emailsToInclude.removeAll(where: { $0 == email})
+            UserDefaults.standard.setValue(emailsToInclude, forKey: Self.emailsToIncludeUserDefaultsKey)
         }
     }
 }
