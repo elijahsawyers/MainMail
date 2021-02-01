@@ -28,7 +28,7 @@ Next, clone the repository.
 ```sh
 git clone https://github.com/elijahsawyers/MainMail.git
 ```
-After cloning the repository, open the Xcode project file.
+After cloning the repository, open the Xcode workspace file.
 
 ```sh
 cd path/to/cloned/repo
@@ -37,7 +37,7 @@ open MainMail/Main\ Mail.xcworkspace
 
 Once you have the workspace opened up in Xcode, simply run the application with ```⌘ + R```.
 
-To actually use the app, login with your Gmail account and, add emails to display in the menu bar by inputting them into the text field.
+To actually use the app, login with your Gmail account, and add emails to display in the menu bar by inputting them into the text field.
 
 ## License
 
