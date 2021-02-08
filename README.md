@@ -33,7 +33,7 @@ After cloning the repository, open the Xcode workspace file.
 
 ```sh
 cd path/to/cloned/repo
-open MainMail/Main\ Mail.xcworkspace
+open MainMail/Main\ Mail/Main\ Mail.xcworkspace
 ```
 
 Once you have the workspace opened up in Xcode, simply run the application with ```⌘ + R```.
